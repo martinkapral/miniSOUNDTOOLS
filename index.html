@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick-Producer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Teko:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Quick-Producer</h1>
+    <h2>Pre-Delay and Reverb Time Calculator</h2>
+    <p>
+      Discover the ideal time parameters for your reverb! Experienced audio
+      engineers often synchronize their reverb settings with the tempo of the
+      music they're producing. This ensures that the reverb complements the
+      rhythmic feel of the song. Use this Pre-Delay and Reverb Time Calculator
+      to determine suitable pre-delay and decay time values that align with the
+      BPM of your track.
+    </p>
+    <div class="calc">
+      <input
+        id="bpm-reverb"
+        class="bpm-reverb"
+        type="number"
+        inputmode="numeric"
+        placeholder="BPM"
+        value=""
+      />
+      <button class="convert-btn" id="convert-btn" onclick="calculateReverb()">
+        Convert
+      </button>
+    </div>
+    <div class="reverb-table">
+      <table>
+        <tbody>
+          <tr class="darker">
+            <th>Reverb size</th>
+            <th>Pre-delay</th>
+            <th>Decay time</th>
+            <th>Total reverb time</th>
+          </tr>
+          <tr>
+            <td class="table-header">Hall (2 Bars)</td>
+            <td id="pre-hall">0 ms</td>
+            <td id="decay-hall">0 ms</td>
+            <td id="total-hall">0 ms</td>
+          </tr>
+          <tr class="dark">
+            <td class="table-header">Large Room (1 Bars)</td>
+            <td id="pre-LR">0 ms</td>
+            <td id="decay-LR">0 ms</td>
+            <td id="total-LR">0 ms</td>
+          </tr>
+          <tr>
+            <td class="table-header">Small Room (1/2 Note)</td>
+            <td id="pre-SR">0 ms</td>
+            <td id="decay-SR">0 ms</td>
+            <td id="total-SR">0 ms</td>
+          </tr>
+          <tr class="dark">
+            <td class="table-header">Tight Ambience (1/4 Note)</td>
+            <td id="pre-TA">0 ms</td>
+            <td id="decay-TA">0 ms</td>
+            <td id="total-TA">0 ms</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
