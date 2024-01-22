@@ -243,9 +243,15 @@ tbody {
 
   h2 {
     margin-bottom: 40px;
+    transform: scale(0.8);
   }
 
   .bpm-reverb {
     padding-left: 0px;
   }
+
+  .calc {
+    transform: scale(0.8);
+  }
+}
 }
