@@ -4,10 +4,7 @@
   --clr-grey3: hsla(360, 0%, 67%, 1);
   --clr-grey4: rgb(128, 127, 127);
   --clr-white: hsl(30, 38%, 92%);
-
-  --clr-neutral-900: hsl(212, 21%, 14%);
-  --clr-neutral-400: hsl(228, 12%, 48%);
-  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-scale: hsl(32, 100%, 50%);
 
   --ff-base: "Teko", sans-serif;
   --ff-table: "Courier Prime", monospace;
@@ -137,9 +134,17 @@ p {
   margin-bottom: 10px;
 }
 
+.intro-container {
+  font-size: 20px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: justify;
+}
+
 .calc {
   display: flex;
-  margin-left: 12px;
+
   margin-bottom: -20px;
 }
 
@@ -278,12 +283,162 @@ hr {
   }
 }
 
+/* MEDIA FOR REVERB AND DELAY TOOLS */
+
 @media (max-width: 600px) {
   .rd-containers {
     margin-left: 5px;
     margin-right: 5px;
   }
-  .bpm-reverb {
-    padding-left: 0px;
+  .rd-containers p {
+    margin-left: 45px;
+    margin-right: 45px;
   }
+
+  .piano-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  /* .bpm-reverb {
+    padding-left: 0px;
+  } */
+}
+
+/* KEYBOARD */
+
+.piano-keys {
+  display: flex;
+  list-style: none;
+  margin-top: 40px;
+  margin-left: -40px;
+  justify-content: center;
+}
+.piano-keys .key {
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+.piano-keys .black {
+  z-index: 2;
+  width: 44px;
+  height: 140px;
+  margin: 0 -22px 0 -22px;
+  border: 2px solid black;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#333, #000);
+}
+
+.piano-keys .white {
+  height: 230px;
+  width: 70px;
+
+  border: 1px solid #000;
+  background: linear-gradient(#fff 96%, #eee 4%);
+  margin-bottom: 50px;
+}
+
+.piano-keys .key span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: var(--clr-grey3);
+  font-size: 20px;
+  text-align: center;
+}
+.piano-keys .key.hide span {
+  display: none;
+}
+.piano-keys .black span {
+  bottom: 20px;
+  color: var(--clr-grey3);
+}
+
+.scales-container {
+  background-color: var(--clr-grey2);
+  border: 1px solid black;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px;
+  box-shadow: 0px 5px 10px var(--clr-grey4);
+}
+
+.scales-intro {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.scales-btns button {
+  background-color: var(--clr-grey3);
+  border: 1px solid black;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  gap: 20px;
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: var(--fw-regular500);
+}
+
+.scales-btns button:hover {
+  box-shadow: 0px 0px 20px 10px var(--clr-grey1);
+}
+
+.scales-btns button:focus {
+  box-shadow: 0px 0px 20px 5px var(--clr-scale);
+  background: var(--clr-scale);
+}
+
+.minor-scale {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.major-scale {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.minor-scale .sharp {
+  background-color: var(--clr-grey4);
+}
+
+.major-scale .sharp {
+  background-color: var(--clr-grey4);
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.hr3 {
+  margin-bottom: 20px;
+}
+
+/* .colored-key COLOR FILLING CLASS - into piano keys*/
+.piano-keys .colored-key {
+  background: var(--clr-scale);
+}
+
+/* MEDIA FOR SCALES TOOL */
+
+@media (max-width: 1000px) {
+  .piano-keys {
+    margin-left: -20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .scales-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  /* TREBA DOROBIT SCALES RESPONZIVITU */
 }
