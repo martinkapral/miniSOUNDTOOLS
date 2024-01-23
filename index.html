@@ -14,6 +14,10 @@
   </head>
   <body>
     <h1>Quick-Producer</h1>
+    <div class="intro-container"><p>Welcome to [Your Page Name] - Your Creative Playground!</p>
+    <p>Are you a passionate music producer seeking a haven to fine-tune your craft and explore the realms of sound? Look no further! We invite you to immerse yourself in a world where creativity knows no bounds, and where the tools to elevate your music production journey are just a click away.</p>
+  </div>
+  <hr class="hr">
     <h3>Choose Your BPM:</h3>
     <div class="calc">
       <input
@@ -161,6 +165,71 @@
       </div>
     </div>
     
+  </div>
+  <hr class="hr">
+  <h2>Scales</h2>
+  <p class="scales-intro">Practicing scales may not be the most enjoyable part of piano lessons, and some students might be tempted to avoid them altogether. A scale can be described as a sequence of musical notes organized in a specific order to create melodies that sound pleasing and attractive.</p>
+  <ul class="piano-keys">
+    <li class="key white" id="key-c"><span>c</span></li>
+    <li class="key black" id="key-csharp"><span>c#</span></li>
+    <li class="key white" id="key-d"><span>d</span></li>
+    <li class="key black" id="key-dsharp"><span>d#</span></li>
+    <li class="key white" id="key-e"><span>e</span></li>
+    <li class="key white" id="key-f"><span>f</span></li>
+    <li class="key black" id="key-fsharp"><span>f#</span></li>
+    <li class="key white" id="key-g"><span>g</span></li>
+    <li class="key black" id="key-gsharp"><span>g#</span></li>
+    <li class="key white" id="key-a"><span>a</span></li>
+    <li class="key black" id="key-asharp"><span>a#</span></li>
+    <li class="key white" id="key-b"><span>b</span></li>
+    <li class="key white" id="key-c2"><span>c</span></li>
+    <li class="key black" id="key-csharp2"><span>c#</span></li>
+    <li class="key white" id="key-d2"><span>d</span></li>
+    <li class="key black" id="key-dsharp2"><span>d#</span></li>
+    <li class="key white" id="key-e2"><span>e</span></li>
+    <li class="key white" id="key-f2"><span>f</span></li>
+    <li class="key black" id="key-fsharp2"><span>f#</span></li>
+    <li class="key white" id="key-g2"><span>g</span></li>
+    <li class="key black" id="key-gsharp2"><span>g#</span></li>
+    <li class="key white" id="key-a2"><span>a</span></li>
+    <li class="key black" id="key-asharp2"><span>a#</span></li>
+    <li class="key white" id="key-b2"><span>b</span></li>
+  </ul>
+  <div class="scales-container">
+    <div class="scales-btns">
+        <div class="minor-scale">
+          <h4>Minor</h4>
+          <button class="normal" id="minor-a" onclick="minorA()">A</button>
+          <button class="sharp" id="minor-asharp" onclick="minorAsharp()">A#</button>
+          <button class="normal" id="minor-b" onclick="minorB()">B</button>
+          <button class="normal" id="minor-c" onclick="minorC()">C</button>
+          <button class="sharp" id="minor-csharp" onclick="minorCsharp()">C#</button>
+          <button class="normal" id="minor-d" onclick="minorD()">D</button>
+          <button class="sharp" id="minor-dsharp" onclick="minorDsharp()">D#</button>
+          <button class="normal" id="minor-e" onclick="minorE()">E</button>
+          <button class="normal" id="minor-f" onclick="minorF()">F</button>
+          <button class="sharp" id="minor-fsharp" onclick="minorFsharp()">F#</button>
+          <button class="normal" id="minor-g" onclick="minorG()">G</button>
+          <button class="sharp" id="minor-gsharp" onclick="minorGsharp()">G#</button>
+        </div>
+        <hr class="hr3">
+        <div class="major-scale">
+          <h4>Major</h4>
+          <button class="normal">A</button>
+          <button class="sharp">A#</button>
+          <button class="normal">B</button>
+          <button class="normal">C</button>
+          <button class="sharp">C#</button>
+          <button class="normal">D</button>
+          <button class="sharp">D#</button>
+          <button class="normal">E</button>
+          <button class="normal">F</button>
+          <button class="sharp">F#</button>
+          <button class="normal">G</button>
+          <button class="sharp">G#</button>
+        </div>
+    
+    </div>
   </div>
   <hr class="hr">
     <script src="app.js"></script>
