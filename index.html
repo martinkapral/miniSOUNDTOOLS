@@ -14,15 +14,7 @@
   </head>
   <body>
     <h1>Quick-Producer</h1>
-    <h2>Pre-Delay and Reverb Time Calculator</h2>
-    <p>
-      Discover the ideal time parameters for your reverb! Experienced audio
-      engineers often synchronize their reverb settings with the tempo of the
-      music they're producing. This ensures that the reverb complements the
-      rhythmic feel of the song. Use this Pre-Delay and Reverb Time Calculator
-      to determine suitable pre-delay and decay time values that align with the
-      BPM of your track.
-    </p>
+    <h3>Choose Your BPM:</h3>
     <div class="calc">
       <input
         id="bpm-reverb"
@@ -32,46 +24,145 @@
         placeholder="BPM"
         value=""
       />
-      <button class="convert-btn" id="convert-btn" onclick="calculateReverb()">
+      <button
+        class="convert-btn"
+        id="convert-btn"
+        onclick="calculateReverb(), calculateDelay()"
+      >
         Convert
       </button>
+      
     </div>
-    <div class="reverb-table">
-      <table>
-        <tbody>
-          <tr class="darker">
-            <th>Reverb size</th>
-            <th>Pre-delay</th>
-            <th>Decay time</th>
-            <th>Total reverb time</th>
-          </tr>
-          <tr>
-            <td class="table-header">Hall (2 Bars)</td>
-            <td id="pre-hall">0 ms</td>
-            <td id="decay-hall">0 ms</td>
-            <td id="total-hall">0 ms</td>
-          </tr>
-          <tr class="dark">
-            <td class="table-header">Large Room (1 Bar)</td>
-            <td id="pre-LR">0 ms</td>
-            <td id="decay-LR">0 ms</td>
-            <td id="total-LR">0 ms</td>
-          </tr>
-          <tr>
-            <td class="table-header">Small Room (1/2 Note)</td>
-            <td id="pre-SR">0 ms</td>
-            <td id="decay-SR">0 ms</td>
-            <td id="total-SR">0 ms</td>
-          </tr>
-          <tr class="dark">
-            <td class="table-header">Tight Ambience (1/4 Note)</td>
-            <td id="pre-TA">0 ms</td>
-            <td id="decay-TA">0 ms</td>
-            <td id="total-TA">0 ms</td>
-          </tr>
-        </tbody>
-      </table>
+    <hr class="hr">
+    <div class="rd-containers">
+      <!-- REVERB CONTAINER -->
+    <div class="reverb-container">
+      <h2>Reverb Time Calculator</h2>
+      <p>
+        Discover the ideal time parameters for your reverb! Experienced audio
+        engineers often synchronize their reverb settings with the tempo of the
+        music they're producing. This ensures that the reverb complements the
+        rhythmic feel of the song. Use this Reverb Time Calculator to determine
+        suitable pre-delay and decay time values that align with the BPM of your
+        track.
+      </p>
+      
+      <div class="reverb-table">
+        <table>
+          <tbody>
+            <tr class="darker">
+              <th>Reverb size</th>
+              <th>Pre-delay</th>
+              <th>Decay time</th>
+              <th>Total reverb time</th>
+            </tr>
+            <tr>
+              <td class="table-header">Hall (2 Bars)</td>
+              <td id="pre-hall">0 ms</td>
+              <td id="decay-hall">0 ms</td>
+              <td id="total-hall">0 ms</td>
+            </tr>
+            <tr class="dark">
+              <td class="table-header">Large Room (1 Bar)</td>
+              <td id="pre-LR">0 ms</td>
+              <td id="decay-LR">0 ms</td>
+              <td id="total-LR">0 ms</td>
+            </tr>
+            <tr>
+              <td class="table-header">Small Room (1/2 Note)</td>
+              <td id="pre-SR">0 ms</td>
+              <td id="decay-SR">0 ms</td>
+              <td id="total-SR">0 ms</td>
+            </tr>
+            <tr class="dark">
+              <td class="table-header">Tight Ambience (1/4 Note)</td>
+              <td id="pre-TA">0 ms</td>
+              <td id="decay-TA">0 ms</td>
+              <td id="total-TA">0 ms</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+
+    <hr class="hr2">
+    
+    <!-- DELAY CONTAINER -->
+    <div class="delay-container">
+      <h2>Delay Time Calculator</h2>
+      <p>
+        Discover the ideal time parameters for your delay! Adding a delay to
+        your music can enhance its appeal by introducing movement and depth.
+        When synchronized with the tempo of your track, the delay becomes subtle
+        and contributes to a sense of depth without being too prominent. Using
+        this Delay Time Calculator can assist you in achieving the desired
+        effect.
+      </p>
+
+      <div class="reverb-table">
+        <table>
+          <tbody>
+            <tr class="darker">
+              <th>Note value</th>
+              <th>Notes</th>
+              <th>Dotted</th>
+              <th>Triplets</th>
+            </tr>
+            <tr>
+              <td class="table-header">1/1 (1 Bar)</td>
+              <td id="notes11">0 ms</td>
+              <td id="dotted11">0 ms</td>
+              <td id="triplets11">0 ms</td>
+            </tr>
+            <tr class="dark">
+              <td class="table-header">1/2 (2 Beats)</td>
+              <td id="notes12">0 ms</td>
+              <td id="dotted12">0 ms</td>
+              <td id="triplets12">0 ms</td
+            </tr>
+            <tr>
+              <td class="table-header">1/4 (1 Beat)</td>
+              <td id="notes14">0 ms</td>
+              <td id="dotted14">0 ms</td>
+              <td id="triplets14">0 ms</td>
+            </tr>
+            <tr class="dark">
+              <td class="table-header">1/8</td>
+              <td id="notes18">0 ms</td>
+              <td id="dotted18">0 ms</td>
+              <td id="triplets18">0 ms</td>
+            </tr>
+            <tr>
+              <td class="table-header">1/16</td>
+              <td id="notes116">0 ms</td>
+              <td id="dotted116">0 ms</td>
+              <td id="triplets116">0 ms</td>
+            </tr>
+            <tr class="dark">
+              <td class="table-header">1/32</td>
+              <td id="notes132">0 ms</td>
+              <td id="dotted132">0 ms</td>
+              <td id="triplets132">0 ms</td>
+            </tr>
+            <tr>
+              <td class="table-header">1/64</td>
+              <td id="notes164">0 ms</td>
+              <td id="dotted164">0 ms</td>
+              <td id="triplets164">0 ms</td>
+            </tr>
+            <tr class="dark">
+              <td class="table-header">1/128</td>
+              <td id="notes1128">0 ms</td>
+              <td id="dotted1128">0 ms</td>
+              <td id="triplets1128">0 ms</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+  <hr class="hr">
     <script src="app.js"></script>
   </body>
 </html>
