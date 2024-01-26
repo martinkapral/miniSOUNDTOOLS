@@ -5,7 +5,10 @@
   --clr-grey4: rgb(128, 127, 127);
   --clr-white: hsl(30, 38%, 92%);
   --clr-scale: hsl(32, 100%, 50%);
+  --clr-reverb: rgb(37, 191, 37);
+  --clr-delay: rgb(240, 56, 56);
 
+  --ff-logo: "Oswald", sans-serif;
   --ff-base: "Teko", sans-serif;
   --ff-table: "Courier Prime", monospace;
 
@@ -91,21 +94,62 @@ body {
   margin-top: -20px;
 }
 
-h1 {
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-family: var(--ff-base);
-  font-weight: var(--fw-regular500);
-  text-shadow: 1px 1px 1px white, 2px 2px 1px white;
-  font-size: 50px;
-  display: flex;
-  justify-content: start;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  height: 50px;
+  padding: 0px 50px;
+
   background-color: var(--clr-grey4);
-  padding-top: 10px;
-  padding-bottom: 0px;
-  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
   box-shadow: 0 0px 50px 20px var(--clr-grey4);
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  font-size: 18px;
+  font-weight: var(--fw-bold700);
+  text-decoration: none;
+  margin-left: 40px;
+  color: white;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+}
+
+.navbar a:hover {
+  color: #000;
+  transition: 0.3s;
+}
+
+.scale-color {
+  color: var(--clr-scale);
+  font-size: 50px;
+}
+
+.reverb-color {
+  color: var(--clr-reverb);
+  font-size: 50px;
+}
+
+.delay-color {
+  color: var(--clr-delay);
+  font-size: 50px;
+}
+
+h1 {
+  font-family: var(--ff-logo);
+  font-weight: var(--fw-regular500);
+  padding-bottom: 15px;
+  padding-top: 10px;
+  font-size: 40px;
 }
 
 h2 {
@@ -113,7 +157,7 @@ h2 {
   font-weight: var(--fw-bold700);
   font-size: 28px;
   text-align: center;
-  text-decoration: underline;
+  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
@@ -135,11 +179,19 @@ p {
 }
 
 .intro-container {
-  font-size: 20px;
+  margin-top: 120px;
   margin-bottom: 50px;
   margin-left: 50px;
   margin-right: 50px;
   text-align: justify;
+}
+
+.intro-container p {
+  font-size: 16px;
+}
+
+.bold-text {
+  font-weight: var(--fw-bold700);
 }
 
 .calc {
@@ -291,8 +343,13 @@ hr {
     margin-right: 5px;
   }
   .rd-containers p {
-    margin-left: 45px;
-    margin-right: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .intro-container {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .piano-container {
@@ -336,13 +393,14 @@ hr {
   border: 1px solid #000;
   background: linear-gradient(#fff 96%, #eee 4%);
   margin-bottom: 50px;
+  box-shadow: 0px 5px 10px var(--clr-grey4);
 }
 
 .piano-keys .key span {
   position: absolute;
   bottom: 20px;
   width: 100%;
-  color: var(--clr-grey3);
+  color: black;
   font-size: 20px;
   text-align: center;
 }
@@ -351,7 +409,7 @@ hr {
 }
 .piano-keys .black span {
   bottom: 20px;
-  color: var(--clr-grey3);
+  color: white;
 }
 
 .scales-container {
@@ -390,14 +448,12 @@ hr {
   background: var(--clr-scale);
 }
 
-.minor-scale {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 20px;
+.scales-btns button:active {
+  box-shadow: 0px 0px 20px 5px var(--clr-scale);
+  background: var(--clr-scale);
 }
 
-.major-scale {
+.minor-scale {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -413,7 +469,22 @@ hr {
 
 h4 {
   text-transform: uppercase;
-  font-size: 28px;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.scale-select {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  margin: auto;
 }
 
 .hr3 {
@@ -428,17 +499,74 @@ h4 {
 /* MEDIA FOR SCALES TOOL */
 
 @media (max-width: 1000px) {
-  .piano-keys {
+  /* .piano-keys {
     margin-left: -20px;
     margin-right: 20px;
+  } */
+  .piano-keys {
+    transform: scale(0.9);
   }
 }
 
+@media (max-width: 800px) {
+  .scales-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .piano-keys {
+    transform: scale(0.8);
+    margin-top: -10px;
+    margin-bottom: -20px;
+    margin-left: -100px;
+    margin-right: -68px;
+  }
+
+  .minor-scale {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  /* .scales-btns {
+    width: 100%;
+  } */
+
+  /* TREBA DOROBIT SCALES RESPONZIVITU */
+}
+
 @media (max-width: 600px) {
+  .scales-intro {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .scales-container {
     margin-left: 5px;
     margin-right: 5px;
   }
 
-  /* TREBA DOROBIT SCALES RESPONZIVITU */
+  .piano-keys {
+    transform: scale(0.6);
+    margin-top: -40px;
+    margin-bottom: -50px;
+    margin-left: -170px;
+    margin-right: -148px;
+  }
+}
+
+@media (max-width: 400px) {
+  .scales-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .piano-keys {
+    transform: scale(0.5);
+    margin-top: -60px;
+    margin-bottom: -80px;
+    margin-left: -190px;
+    margin-right: -170px;
+  }
 }
