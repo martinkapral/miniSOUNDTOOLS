@@ -11,10 +11,25 @@
       href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Teko:wght@300;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Quick-Producer</h1>
-    <div class="intro-container"><p>Welcome to [Your Page Name] - Your Creative Playground!</p>
+    <header class="header">
+      <h1>miniSOUNDTOOLS</h1>
+
+      <nav class="navbar">
+
+        <a href="#" onclick="scrollScales()"><span class="scale-color">.</span>Scales</a>
+        <a href="#" onclick="scrollReverbTime()"><span class="reverb-color">.</span>Reverb time</a>
+        <a href="#" onclick="scrollDelayTime()"><span class="delay-color">.</span>Delay time</a>
+        
+      </nav>
+    </header>
+    
+    <div class="intro-container"><p>Welcome to <span class="bold-text">miniSOUNDTOOLS</span> - Your Creative Playground!</p>
+      <p>This website features a suite of compact tools tailored for musicians, music producers and beat makers, designed to enhance their workflow and productivity.</p>
     <p>Are you a passionate music producer seeking a haven to fine-tune your craft and explore the realms of sound? Look no further! We invite you to immerse yourself in a world where creativity knows no bounds, and where the tools to elevate your music production journey are just a click away.</p>
   </div>
   <hr class="hr">
@@ -41,7 +56,7 @@
     <div class="rd-containers">
       <!-- REVERB CONTAINER -->
     <div class="reverb-container">
-      <h2>Reverb Time Calculator</h2>
+      <h2 id="scroll-reverb"><span class="reverb-color">.</span>Reverb Time Calculator</h2>
       <p>
         Discover the ideal time parameters for your reverb! Experienced audio
         engineers often synchronize reverb settings with the tempo of the
@@ -93,7 +108,7 @@
     
     <!-- DELAY CONTAINER -->
     <div class="delay-container">
-      <h2>Delay Time Calculator</h2>
+      <h2 id="scroll-delay"><span class="delay-color">.</span>Delay Time Calculator</h2>
       <p>
         Discover the ideal time parameters for your delay! Adding a delay to
         your music can enhance its appeal by introducing movement and depth.
@@ -167,8 +182,8 @@
     
   </div>
   <hr class="hr">
-  <h2>Scales</h2>
-  <p class="scales-intro">Practicing scales may not be the most enjoyable part of piano lessons, and some students might be tempted to avoid them altogether. A scale can be described as a sequence of musical notes organized in a specific order to create melodies that sound pleasing and attractive.</p>
+  <h2 id="scroll-scales"><span class="scale-color">.</span>Scales</h2>
+  <p class="scales-intro">Practicing scales may not be the most enjoyable part of piano lessons, and some students might be tempted to avoid them altogether. A scale can be described as a sequence of musical notes (within an octave) organized in a specific order to create melodies that sound pleasing and attractive.</p>
   <ul class="piano-keys">
     <li class="key white" id="key-c"><span>c</span></li>
     <li class="key black" id="key-csharp"><span>c#</span></li>
@@ -195,10 +210,20 @@
     <li class="key black" id="key-asharp2"><span>a#</span></li>
     <li class="key white" id="key-b2"><span>b</span></li>
   </ul>
+  <h4><label for="scale-select">Choose a scale + root key:</label>
+
+    <select class="scale-select" name="scales" id="scale-select">
+      <option value="minorNatural">Minor natural</option>
+      <option value="minorHarmonic">Minor harmonic</option>
+      <option value="major">Major</option>
+      
+    </select></h4>
   <div class="scales-container">
-    <div class="scales-btns">
-        <div class="minor-scale">
-          <h4>Minor</h4>
+  
+    <div class="scales-btns" id="result-scale">
+      
+        <div class="minor-scale" id="minor-scale">
+          
           <button class="normal" id="minor-a" onclick="minorA()">A</button>
           <button class="sharp" id="minor-asharp" onclick="minorAsharp()">A#</button>
           <button class="normal" id="minor-b" onclick="minorB()">B</button>
@@ -212,22 +237,7 @@
           <button class="normal" id="minor-g" onclick="minorG()">G</button>
           <button class="sharp" id="minor-gsharp" onclick="minorGsharp()">G#</button>
         </div>
-        <hr class="hr3">
-        <div class="major-scale">
-          <h4>Major</h4>
-          <button class="normal">A</button>
-          <button class="sharp">A#</button>
-          <button class="normal">B</button>
-          <button class="normal">C</button>
-          <button class="sharp">C#</button>
-          <button class="normal">D</button>
-          <button class="sharp">D#</button>
-          <button class="normal">E</button>
-          <button class="normal">F</button>
-          <button class="sharp">F#</button>
-          <button class="normal">G</button>
-          <button class="sharp">G#</button>
-        </div>
+        
     
     </div>
   </div>
