@@ -179,6 +179,73 @@ function calculateDelay() {
 //
 //
 
+// CHANGING SELECTION
+let selection = document.getElementById("scale-select");
+let resultScale = document.getElementById("result-scale");
+
+selection.addEventListener("change", () => {
+  // resultScale.innerText = selection.options[selection.selectedIndex].text;
+  restartScale();
+  if (selection.value === "minorNatural") {
+    resultScale.innerHTML = `<div class="minor-scale" id="minor-scale">
+          
+    <button class="normal" id="minor-a" onclick="minorA()">A</button>
+    <button class="sharp" id="minor-asharp" onclick="minorAsharp()">A#</button>
+    <button class="normal" id="minor-b" onclick="minorB()">B</button>
+    <button class="normal" id="minor-c" onclick="minorC()">C</button>
+    <button class="sharp" id="minor-csharp" onclick="minorCsharp()">C#</button>
+    <button class="normal" id="minor-d" onclick="minorD()">D</button>
+    <button class="sharp" id="minor-dsharp" onclick="minorDsharp()">D#</button>
+    <button class="normal" id="minor-e" onclick="minorE()">E</button>
+    <button class="normal" id="minor-f" onclick="minorF()">F</button>
+    <button class="sharp" id="minor-fsharp" onclick="minorFsharp()">F#</button>
+    <button class="normal" id="minor-g" onclick="minorG()">G</button>
+    <button class="sharp" id="minor-gsharp" onclick="minorGsharp()">G#</button>
+  </div>`;
+  }
+
+  if (selection.value === "minorHarmonic") {
+    resultScale.innerHTML = `<div class="minor-scale" id="minor-scale">
+          
+    <button class="normal" id="minor-a" onclick="minorHarmonicA()">A</button>
+    <button class="sharp" id="minor-asharp" onclick="minorHarmonicAsharp()">A#</button>
+    <button class="normal" id="minor-b" onclick="minorHarmonicB()">B</button>
+    <button class="normal" id="minor-c" onclick="minorHarmonicC()">C</button>
+    <button class="sharp" id="minor-csharp" onclick="minorHarmonicCsharp()">C#</button>
+    <button class="normal" id="minor-d" onclick="minorHarmonicD()">D</button>
+    <button class="sharp" id="minor-dsharp" onclick="minorHarmonicDsharp()">D#</button>
+    <button class="normal" id="minor-e" onclick="minorHarmonicE()">E</button>
+    <button class="normal" id="minor-f" onclick="minorHarmonicF()">F</button>
+    <button class="sharp" id="minor-fsharp" onclick="minorHarmonicFsharp()">F#</button>
+    <button class="normal" id="minor-g" onclick="minorHarmonicG()">G</button>
+    <button class="sharp" id="minor-gsharp" onclick="minorHarmonicGsharp()">G#</button>
+  </div>`;
+  }
+
+  if (selection.value === "major") {
+    resultScale.innerHTML = `<div class="minor-scale" id="minor-scale">
+          
+    <button class="normal" id="minor-a" onclick="majorA()">A</button>
+    <button class="sharp" id="minor-asharp" onclick="majorAsharp()">A#</button>
+    <button class="normal" id="minor-b" onclick="majorB()">B</button>
+    <button class="normal" id="minor-c" onclick="majorC()">C</button>
+    <button class="sharp" id="minor-csharp" onclick="majorCsharp()">C#</button>
+    <button class="normal" id="minor-d" onclick="majorD()">D</button>
+    <button class="sharp" id="minor-dsharp" onclick="majorDsharp()">D#</button>
+    <button class="normal" id="minor-e" onclick="majorE()">E</button>
+    <button class="normal" id="minor-f" onclick="majorF()">F</button>
+    <button class="sharp" id="minor-fsharp" onclick="majorFsharp()">F#</button>
+    <button class="normal" id="minor-g" onclick="majorG()">G</button>
+    <button class="sharp" id="minor-gsharp" onclick="majorGsharp()">G#</button>
+  </div>`;
+  }
+});
+
+//
+//
+//
+//
+
 let keyA = document.getElementById("key-a");
 let keyAsharp = document.getElementById("key-asharp");
 let keyB = document.getElementById("key-b");
@@ -232,6 +299,10 @@ function restartScale() {
   keyG2.classList.remove("colored-key");
   keyGsharp2.classList.remove("colored-key");
 }
+
+//
+// NATURAL MINOR SCALE
+//
 
 function minorA() {
   restartScale();
@@ -388,3 +459,340 @@ function minorGsharp() {
   keyFsharp2.classList.add("colored-key");
   keyGsharp2.classList.add("colored-key");
 }
+
+//
+// HARMONIC MINOR SCALE
+//
+
+function minorHarmonicA() {
+  restartScale();
+  // IN SCALE
+  keyA.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+  keyF2.classList.add("colored-key");
+  keyGsharp2.classList.add("colored-key");
+  keyA2.classList.add("colored-key");
+}
+
+function minorHarmonicAsharp() {
+  restartScale();
+  // IN SCALE
+  keyAsharp.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyF2.classList.add("colored-key");
+  keyFsharp2.classList.add("colored-key");
+  keyA2.classList.add("colored-key");
+  keyAsharp2.classList.add("colored-key");
+}
+
+function minorHarmonicB() {
+  restartScale();
+  // IN SCALE
+  keyB.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+  keyFsharp2.classList.add("colored-key");
+  keyG2.classList.add("colored-key");
+  keyAsharp2.classList.add("colored-key");
+  keyB2.classList.add("colored-key");
+}
+
+function minorHarmonicC() {
+  restartScale();
+  // IN SCALE
+  keyC.classList.add("colored-key");
+  keyD.classList.add("colored-key");
+  keyDsharp.classList.add("colored-key");
+  keyF.classList.add("colored-key");
+  keyG.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+}
+
+function minorHarmonicCsharp() {
+  restartScale();
+  // IN SCALE
+  keyCsharp.classList.add("colored-key");
+  keyDsharp.classList.add("colored-key");
+  keyE.classList.add("colored-key");
+  keyFsharp.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+}
+
+function minorHarmonicD() {
+  restartScale();
+  // IN SCALE
+  keyD.classList.add("colored-key");
+  keyE.classList.add("colored-key");
+  keyF.classList.add("colored-key");
+  keyG.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+}
+
+function minorHarmonicDsharp() {
+  restartScale();
+  // IN SCALE
+  keyDsharp.classList.add("colored-key");
+  keyF.classList.add("colored-key");
+  keyFsharp.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+}
+
+function minorHarmonicE() {
+  restartScale();
+  // IN SCALE
+  keyE.classList.add("colored-key");
+  keyFsharp.classList.add("colored-key");
+  keyG.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+}
+
+function minorHarmonicF() {
+  restartScale();
+  // IN SCALE
+  keyF.classList.add("colored-key");
+  keyG.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+  keyF2.classList.add("colored-key");
+}
+
+function minorHarmonicFsharp() {
+  restartScale();
+  // IN SCALE
+  keyFsharp.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyF2.classList.add("colored-key");
+  keyFsharp2.classList.add("colored-key");
+}
+
+function minorHarmonicG() {
+  restartScale();
+  // IN SCALE
+  keyG.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyFsharp2.classList.add("colored-key");
+  keyG2.classList.add("colored-key");
+}
+
+function minorHarmonicGsharp() {
+  restartScale();
+  // IN SCALE
+  keyGsharp.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+  keyG2.classList.add("colored-key");
+  keyGsharp2.classList.add("colored-key");
+}
+
+//
+// MAJOR SCALE
+//
+
+function majorA() {
+  restartScale();
+  // IN SCALE
+  keyA.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+  keyFsharp2.classList.add("colored-key");
+  keyGsharp2.classList.add("colored-key");
+  keyA2.classList.add("colored-key");
+}
+
+function majorAsharp() {
+  restartScale();
+  // IN SCALE
+  keyAsharp.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyF2.classList.add("colored-key");
+  keyG2.classList.add("colored-key");
+  keyA2.classList.add("colored-key");
+  keyAsharp2.classList.add("colored-key");
+}
+
+function majorB() {
+  restartScale();
+  // IN SCALE
+  keyB.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+  keyFsharp2.classList.add("colored-key");
+  keyGsharp2.classList.add("colored-key");
+  keyAsharp2.classList.add("colored-key");
+  keyB2.classList.add("colored-key");
+}
+
+function majorC() {
+  restartScale();
+  // IN SCALE
+  keyC.classList.add("colored-key");
+  keyD.classList.add("colored-key");
+  keyE.classList.add("colored-key");
+  keyF.classList.add("colored-key");
+  keyG.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+}
+
+function majorCsharp() {
+  restartScale();
+  // IN SCALE
+  keyCsharp.classList.add("colored-key");
+  keyDsharp.classList.add("colored-key");
+  keyF.classList.add("colored-key");
+  keyFsharp.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+}
+
+function majorD() {
+  restartScale();
+  // IN SCALE
+  keyD.classList.add("colored-key");
+  keyE.classList.add("colored-key");
+  keyFsharp.classList.add("colored-key");
+  keyG.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+}
+
+function majorDsharp() {
+  restartScale();
+  // IN SCALE
+  keyDsharp.classList.add("colored-key");
+  keyF.classList.add("colored-key");
+  keyG.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+}
+
+function majorE() {
+  restartScale();
+  // IN SCALE
+  keyE.classList.add("colored-key");
+  keyFsharp.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+}
+
+function majorF() {
+  restartScale();
+  // IN SCALE
+  keyF.classList.add("colored-key");
+  keyG.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+  keyF2.classList.add("colored-key");
+}
+
+function majorFsharp() {
+  restartScale();
+  // IN SCALE
+  keyFsharp.classList.add("colored-key");
+  keyGsharp.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyF2.classList.add("colored-key");
+  keyFsharp2.classList.add("colored-key");
+}
+
+function majorG() {
+  restartScale();
+  // IN SCALE
+  keyG.classList.add("colored-key");
+  keyA.classList.add("colored-key");
+  keyB.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyD2.classList.add("colored-key");
+  keyE2.classList.add("colored-key");
+  keyFsharp2.classList.add("colored-key");
+  keyG2.classList.add("colored-key");
+}
+
+function majorGsharp() {
+  restartScale();
+  // IN SCALE
+  keyGsharp.classList.add("colored-key");
+  keyAsharp.classList.add("colored-key");
+  keyC2.classList.add("colored-key");
+  keyCsharp2.classList.add("colored-key");
+  keyDsharp2.classList.add("colored-key");
+  keyF2.classList.add("colored-key");
+  keyG2.classList.add("colored-key");
+  keyGsharp2.classList.add("colored-key");
+}
+
+//
+//
+// SCROLLING
+//
+//
+
+// REFRESH = THE TOP OF THE PAGE
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
+// SCROLL TO SCALES
+
+// function scrollScales() {
+//   window.scrollTo(50, 0);
+// }
