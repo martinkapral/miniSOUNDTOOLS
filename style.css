@@ -155,7 +155,7 @@ h1 {
 h2 {
   font-family: var(--ff-table);
   font-weight: var(--fw-bold700);
-  font-size: 28px;
+  font-size: 20px;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -164,7 +164,7 @@ h2 {
 h3 {
   font-family: var(--ff-table);
   font-weight: var(--fw-bold700);
-  font-size: 28px;
+  font-size: 20px;
   text-align: center;
 
   margin-bottom: 10px;
@@ -295,7 +295,7 @@ tbody {
 }
 
 hr {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   /* margin-top: 50px; */
   margin-left: 0px;
   margin-right: 0px;
@@ -468,7 +468,6 @@ hr {
 }
 
 h4 {
-  text-transform: uppercase;
   font-size: 20px;
   text-align: center;
   display: flex;
