@@ -20,38 +20,92 @@
       <h1>miniSOUNDTOOLS</h1>
 
       <nav class="navbar">
-
-        <a href="#" onclick="scrollScales()"><span class="scale-color">.</span>Scales</a>
-        <a href="#" onclick="scrollReverbTime()"><span class="reverb-color">.</span>Reverb time</a>
-        <a href="#" onclick="scrollDelayTime()"><span class="delay-color">.</span>Delay time</a>
+        <div class="nav-menu">
+          <a href="#scroll-scales" class="nav-item" onclick="scrollScales()"><span class="scale-color">.</span>Scales</a>
+          <a href="#scroll-reverb" class="nav-item" onclick="scrollReverbTime()"><span class="reverb-color">.</span>Reverb time</a>
+          <a href="#scroll-delay" class="nav-item" onclick="scrollDelayTime()"><span class="delay-color">.</span>Delay time</a>
+        </div>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
         
       </nav>
     </header>
+
     
     <div class="intro-container"><p>Welcome to <span class="bold-text">miniSOUNDTOOLS</span> - Your Creative Playground!</p>
       <p>Are you a passionate music producer seeking a haven to fine-tune your craft and explore the realms of sound? Look no further! This website features a suite of compact tools tailored for musicians, music producers and beat makers, designed to enhance their workflow and productivity. We invite you to immerse yourself in a world where creativity knows no bounds, and where the tools to elevate your music production journey are just a click away.</p>
   </div>
-  <hr class="hr">
-    <h3>Choose Your BPM:</h3>
-    <div class="calc">
-      <input
-        id="bpm-reverb"
-        class="bpm-reverb"
-        type="number"
-        inputmode="numeric"
-        placeholder="BPM"
-        value=""
-      />
-      <button
-        class="convert-btn"
-        id="convert-btn"
-        onclick="calculateReverb(), calculateDelay()"
-      >
-        Convert
-      </button>
+  
+    
       
     </div>
-    <hr class="hr">
+
+    <hr class="hr" id="scroll-scales">
+  <h2><span class="scale-color">.</span>Scales</h2>
+  <p class="scales-intro">Practicing scales may not be the most enjoyable part of piano lessons, and some students might be tempted to avoid them altogether. A scale can be described as a sequence of musical notes (within an octave) organized in a specific order to create melodies that sound pleasing and attractive.</p>
+  <ul class="piano-keys">
+    <li class="key white" id="key-c"><span>c</span></li>
+    <li class="key black" id="key-csharp"><span>c#</span></li>
+    <li class="key white" id="key-d"><span>d</span></li>
+    <li class="key black" id="key-dsharp"><span>d#</span></li>
+    <li class="key white" id="key-e"><span>e</span></li>
+    <li class="key white" id="key-f"><span>f</span></li>
+    <li class="key black" id="key-fsharp"><span>f#</span></li>
+    <li class="key white" id="key-g"><span>g</span></li>
+    <li class="key black" id="key-gsharp"><span>g#</span></li>
+    <li class="key white" id="key-a"><span>a</span></li>
+    <li class="key black" id="key-asharp"><span>a#</span></li>
+    <li class="key white" id="key-b"><span>b</span></li>
+    <li class="key white" id="key-c2"><span>c</span></li>
+    <li class="key black" id="key-csharp2"><span>c#</span></li>
+    <li class="key white" id="key-d2"><span>d</span></li>
+    <li class="key black" id="key-dsharp2"><span>d#</span></li>
+    <li class="key white" id="key-e2"><span>e</span></li>
+    <li class="key white" id="key-f2"><span>f</span></li>
+    <li class="key black" id="key-fsharp2"><span>f#</span></li>
+    <li class="key white" id="key-g2"><span>g</span></li>
+    <li class="key black" id="key-gsharp2"><span>g#</span></li>
+    <li class="key white" id="key-a2"><span>a</span></li>
+    <li class="key black" id="key-asharp2"><span>a#</span></li>
+    <li class="key white" id="key-b2"><span>b</span></li>
+  </ul>
+  <h4><label for="scale-select">Choose a scale + root key:</label>
+
+    <select class="scale-select" name="scales" id="scale-select">
+      <option value="minorNatural">Minor natural</option>
+      <option value="minorHarmonic">Minor harmonic</option>
+      <option value="major">Major</option>
+      <option value="">More scales soon...</option>
+      
+    </select></h4>
+  <div class="scales-container">
+  
+    <div class="scales-btns" id="result-scale">
+      
+        <div class="minor-scale" id="minor-scale">
+          
+          <button class="normal" id="minor-a" onclick="minorA()">A</button>
+          <button class="sharp" id="minor-asharp" onclick="minorAsharp()">A#</button>
+          <button class="normal" id="minor-b" onclick="minorB()">B</button>
+          <button class="normal" id="minor-c" onclick="minorC()">C</button>
+          <button class="sharp" id="minor-csharp" onclick="minorCsharp()">C#</button>
+          <button class="normal" id="minor-d" onclick="minorD()">D</button>
+          <button class="sharp" id="minor-dsharp" onclick="minorDsharp()">D#</button>
+          <button class="normal" id="minor-e" onclick="minorE()">E</button>
+          <button class="normal" id="minor-f" onclick="minorF()">F</button>
+          <button class="sharp" id="minor-fsharp" onclick="minorFsharp()">F#</button>
+          <button class="normal" id="minor-g" onclick="minorG()">G</button>
+          <button class="sharp" id="minor-gsharp" onclick="minorGsharp()">G#</button>
+        </div>
+        
+    
+    </div>
+  </div>
+  <hr class="hr" id="scroll-reverb">
+    
     <div class="rd-containers">
       <!-- REVERB CONTAINER -->
     <div class="reverb-container">
@@ -64,6 +118,24 @@
         suitable pre-delay and decay time values that align with the BPM of your
         track.
       </p>
+      <h3>Choose Your BPM for reverb:</h3>
+    <div class="calc">
+      <input
+        id="bpm-reverb"
+        class="bpm-reverb"
+        type="number"
+        inputmode="numeric"
+        placeholder="BPM"
+        value=""
+      />
+      <button
+        class="convert-btn"
+        id="convert-btn"
+        onclick="calculateReverb()"
+      >
+        Convert
+      </button>
+    </div>
       
       <div class="reverb-table">
         <table>
@@ -103,7 +175,7 @@
       </div>
     </div>
 
-    <hr class="hr2">
+    <hr class="hr" id="scroll-delay">
     
     <!-- DELAY CONTAINER -->
     <div class="delay-container">
@@ -116,6 +188,24 @@
         this Delay Time Calculator can assist you in achieving the desired
         effect.
       </p>
+      <h3>Choose Your BPM for delay:</h3>
+      <div class="calc">
+        <input
+          id="bpm-delay"
+          class="bpm-reverb"
+          type="number"
+          inputmode="numeric"
+          placeholder="BPM"
+          value=""
+        />
+        <button
+          class="convert-btn"
+          id="convert-btn"
+          onclick="calculateDelay()"
+        >
+          Convert
+        </button>
+      </div>
 
       <div class="reverb-table">
         <table>
@@ -180,66 +270,7 @@
     </div>
     
   </div>
-  <hr class="hr">
-  <h2 id="scroll-scales"><span class="scale-color">.</span>Scales</h2>
-  <p class="scales-intro">Practicing scales may not be the most enjoyable part of piano lessons, and some students might be tempted to avoid them altogether. A scale can be described as a sequence of musical notes (within an octave) organized in a specific order to create melodies that sound pleasing and attractive.</p>
-  <ul class="piano-keys">
-    <li class="key white" id="key-c"><span>c</span></li>
-    <li class="key black" id="key-csharp"><span>c#</span></li>
-    <li class="key white" id="key-d"><span>d</span></li>
-    <li class="key black" id="key-dsharp"><span>d#</span></li>
-    <li class="key white" id="key-e"><span>e</span></li>
-    <li class="key white" id="key-f"><span>f</span></li>
-    <li class="key black" id="key-fsharp"><span>f#</span></li>
-    <li class="key white" id="key-g"><span>g</span></li>
-    <li class="key black" id="key-gsharp"><span>g#</span></li>
-    <li class="key white" id="key-a"><span>a</span></li>
-    <li class="key black" id="key-asharp"><span>a#</span></li>
-    <li class="key white" id="key-b"><span>b</span></li>
-    <li class="key white" id="key-c2"><span>c</span></li>
-    <li class="key black" id="key-csharp2"><span>c#</span></li>
-    <li class="key white" id="key-d2"><span>d</span></li>
-    <li class="key black" id="key-dsharp2"><span>d#</span></li>
-    <li class="key white" id="key-e2"><span>e</span></li>
-    <li class="key white" id="key-f2"><span>f</span></li>
-    <li class="key black" id="key-fsharp2"><span>f#</span></li>
-    <li class="key white" id="key-g2"><span>g</span></li>
-    <li class="key black" id="key-gsharp2"><span>g#</span></li>
-    <li class="key white" id="key-a2"><span>a</span></li>
-    <li class="key black" id="key-asharp2"><span>a#</span></li>
-    <li class="key white" id="key-b2"><span>b</span></li>
-  </ul>
-  <h4><label for="scale-select">Choose a scale + root key:</label>
-
-    <select class="scale-select" name="scales" id="scale-select">
-      <option value="minorNatural">Minor natural</option>
-      <option value="minorHarmonic">Minor harmonic</option>
-      <option value="major">Major</option>
-      
-    </select></h4>
-  <div class="scales-container">
   
-    <div class="scales-btns" id="result-scale">
-      
-        <div class="minor-scale" id="minor-scale">
-          
-          <button class="normal" id="minor-a" onclick="minorA()">A</button>
-          <button class="sharp" id="minor-asharp" onclick="minorAsharp()">A#</button>
-          <button class="normal" id="minor-b" onclick="minorB()">B</button>
-          <button class="normal" id="minor-c" onclick="minorC()">C</button>
-          <button class="sharp" id="minor-csharp" onclick="minorCsharp()">C#</button>
-          <button class="normal" id="minor-d" onclick="minorD()">D</button>
-          <button class="sharp" id="minor-dsharp" onclick="minorDsharp()">D#</button>
-          <button class="normal" id="minor-e" onclick="minorE()">E</button>
-          <button class="normal" id="minor-f" onclick="minorF()">F</button>
-          <button class="sharp" id="minor-fsharp" onclick="minorFsharp()">F#</button>
-          <button class="normal" id="minor-g" onclick="minorG()">G</button>
-          <button class="sharp" id="minor-gsharp" onclick="minorGsharp()">G#</button>
-        </div>
-        
-    
-    </div>
-  </div>
   <hr class="hr">
     <script src="app.js"></script>
   </body>
