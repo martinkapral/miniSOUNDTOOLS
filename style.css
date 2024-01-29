@@ -88,6 +88,10 @@ h3 {
 
 /* MY CODE */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--clr-grey1);
   font-family: var(--ff-table);
@@ -144,6 +148,23 @@ body {
   font-size: 50px;
 }
 
+.hamburger {
+  padding-bottom: 20px;
+  display: none;
+  cursor: pointer;
+  width: 50px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
 h1 {
   font-family: var(--ff-logo);
   font-weight: var(--fw-regular500);
@@ -159,6 +180,7 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 10px;
+  margin-top: 50px;
 }
 
 h3 {
@@ -196,8 +218,7 @@ p {
 
 .calc {
   display: flex;
-
-  margin-bottom: -20px;
+  flex-direction: row;
 }
 
 input {
@@ -219,6 +240,7 @@ input {
   border-radius: 10px;
   background-color: var(--clr-grey4);
   color: white;
+  margin-bottom: 20px;
 
   text-transform: uppercase;
 
@@ -249,10 +271,11 @@ input {
   font-size: 30px;
   width: 200px;
   height: 50px;
-
   margin-left: auto;
-  margin-right: 10px;
+  margin-right: 20px;
+
   margin-bottom: 20px;
+
   padding-top: 5px;
   padding-left: 15px;
   text-align: center;
@@ -310,13 +333,60 @@ hr {
 }
 
 .rd-containers {
-  display: flex;
   margin-left: 50px;
   margin-right: 50px;
   gap: 50px;
 }
 
-@media (max-width: 875px) {
+@media (max-width: 900px) {
+  #scroll-delay {
+    margin-top: -10px;
+  }
+
+  .hamburger {
+    display: block;
+    position: relative;
+    left: 10px;
+    top: 10px;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    margin-top: -20px;
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: var(--clr-grey4);
+
+    text-align: center;
+
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    /* margin: 16px 0; */
+    margin-left: auto;
+    margin-right: 60px;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
   .rd-containers {
     display: flex;
     flex-direction: column;
@@ -332,12 +402,17 @@ hr {
   .convert-btn {
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 20px;
   }
 }
 
 /* MEDIA FOR REVERB AND DELAY TOOLS */
 
 @media (max-width: 600px) {
+  body {
+    margin-right: 10px;
+  }
+
   .rd-containers {
     margin-left: 5px;
     margin-right: 5px;
@@ -355,6 +430,14 @@ hr {
   .piano-container {
     margin-left: 5px;
     margin-right: 5px;
+  }
+
+  .header {
+    padding-left: 10px;
+  }
+
+  .hamburger {
+    margin-right: -30px;
   }
 
   /* .bpm-reverb {
