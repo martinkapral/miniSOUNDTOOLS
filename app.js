@@ -5,6 +5,7 @@
 //
 
 let bpmReverb = document.getElementById("bpm-reverb");
+let bpmDelay = document.getElementById("bpm-delay");
 const convertBtn = document.getElementById("convert-btn");
 
 // HALL CONVERSION
@@ -130,44 +131,38 @@ let dotted1128 = document.getElementById("dotted1128");
 let triplets1128 = document.getElementById("triplets1128");
 
 function calculateDelay() {
-  if (bpmReverb.value > 0) {
-    notes11.innerHTML = `${(notes / bpmReverb.value).toFixed(2)} ms`;
-    dotted11.innerHTML = `${(dotted / bpmReverb.value).toFixed(2)} ms`;
-    triplets11.innerHTML = `${(triplets / bpmReverb.value).toFixed(2)} ms`;
+  if (bpmDelay.value > 0) {
+    notes11.innerHTML = `${(notes / bpmDelay.value).toFixed(2)} ms`;
+    dotted11.innerHTML = `${(dotted / bpmDelay.value).toFixed(2)} ms`;
+    triplets11.innerHTML = `${(triplets / bpmDelay.value).toFixed(2)} ms`;
 
-    notes12.innerHTML = `${(notes / bpmReverb.value / 2).toFixed(2)} ms`;
-    dotted12.innerHTML = `${(dotted / bpmReverb.value / 2).toFixed(2)} ms`;
-    triplets12.innerHTML = `${(triplets / bpmReverb.value / 2).toFixed(2)} ms`;
+    notes12.innerHTML = `${(notes / bpmDelay.value / 2).toFixed(2)} ms`;
+    dotted12.innerHTML = `${(dotted / bpmDelay.value / 2).toFixed(2)} ms`;
+    triplets12.innerHTML = `${(triplets / bpmDelay.value / 2).toFixed(2)} ms`;
 
-    notes14.innerHTML = `${(notes / bpmReverb.value / 4).toFixed(2)} ms`;
-    dotted14.innerHTML = `${(dotted / bpmReverb.value / 4).toFixed(2)} ms`;
-    triplets14.innerHTML = `${(triplets / bpmReverb.value / 4).toFixed(2)} ms`;
+    notes14.innerHTML = `${(notes / bpmDelay.value / 4).toFixed(2)} ms`;
+    dotted14.innerHTML = `${(dotted / bpmDelay.value / 4).toFixed(2)} ms`;
+    triplets14.innerHTML = `${(triplets / bpmDelay.value / 4).toFixed(2)} ms`;
 
-    notes18.innerHTML = `${(notes / bpmReverb.value / 8).toFixed(2)} ms`;
-    dotted18.innerHTML = `${(dotted / bpmReverb.value / 8).toFixed(2)} ms`;
-    triplets18.innerHTML = `${(triplets / bpmReverb.value / 8).toFixed(2)} ms`;
+    notes18.innerHTML = `${(notes / bpmDelay.value / 8).toFixed(2)} ms`;
+    dotted18.innerHTML = `${(dotted / bpmDelay.value / 8).toFixed(2)} ms`;
+    triplets18.innerHTML = `${(triplets / bpmDelay.value / 8).toFixed(2)} ms`;
 
-    notes116.innerHTML = `${(notes / bpmReverb.value / 16).toFixed(2)} ms`;
-    dotted116.innerHTML = `${(dotted / bpmReverb.value / 16).toFixed(2)} ms`;
-    triplets116.innerHTML = `${(triplets / bpmReverb.value / 16).toFixed(
-      2
-    )} ms`;
+    notes116.innerHTML = `${(notes / bpmDelay.value / 16).toFixed(2)} ms`;
+    dotted116.innerHTML = `${(dotted / bpmDelay.value / 16).toFixed(2)} ms`;
+    triplets116.innerHTML = `${(triplets / bpmDelay.value / 16).toFixed(2)} ms`;
 
-    notes132.innerHTML = `${(notes / bpmReverb.value / 32).toFixed(2)} ms`;
-    dotted132.innerHTML = `${(dotted / bpmReverb.value / 32).toFixed(2)} ms`;
-    triplets132.innerHTML = `${(triplets / bpmReverb.value / 32).toFixed(
-      2
-    )} ms`;
+    notes132.innerHTML = `${(notes / bpmDelay.value / 32).toFixed(2)} ms`;
+    dotted132.innerHTML = `${(dotted / bpmDelay.value / 32).toFixed(2)} ms`;
+    triplets132.innerHTML = `${(triplets / bpmDelay.value / 32).toFixed(2)} ms`;
 
-    notes164.innerHTML = `${(notes / bpmReverb.value / 64).toFixed(2)} ms`;
-    dotted164.innerHTML = `${(dotted / bpmReverb.value / 64).toFixed(2)} ms`;
-    triplets164.innerHTML = `${(triplets / bpmReverb.value / 64).toFixed(
-      2
-    )} ms`;
+    notes164.innerHTML = `${(notes / bpmDelay.value / 64).toFixed(2)} ms`;
+    dotted164.innerHTML = `${(dotted / bpmDelay.value / 64).toFixed(2)} ms`;
+    triplets164.innerHTML = `${(triplets / bpmDelay.value / 64).toFixed(2)} ms`;
 
-    notes1128.innerHTML = `${(notes / bpmReverb.value / 128).toFixed(2)} ms`;
-    dotted1128.innerHTML = `${(dotted / bpmReverb.value / 128).toFixed(2)} ms`;
-    triplets1128.innerHTML = `${(triplets / bpmReverb.value / 128).toFixed(
+    notes1128.innerHTML = `${(notes / bpmDelay.value / 128).toFixed(2)} ms`;
+    dotted1128.innerHTML = `${(dotted / bpmDelay.value / 128).toFixed(2)} ms`;
+    triplets1128.innerHTML = `${(triplets / bpmDelay.value / 128).toFixed(
       2
     )} ms`;
   }
@@ -782,6 +777,27 @@ function majorGsharp() {
 
 //
 //
+// HAMBURGER MENU
+//
+//
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-item").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);
+
+//
+//
 // SCROLLING
 //
 //
@@ -790,9 +806,3 @@ function majorGsharp() {
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
-
-// SCROLL TO SCALES
-
-// function scrollScales() {
-//   window.scrollTo(50, 0);
-// }
