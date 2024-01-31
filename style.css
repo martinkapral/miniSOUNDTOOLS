@@ -96,6 +96,8 @@ body {
   background-color: var(--clr-grey1);
   font-family: var(--ff-table);
   margin-top: -20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .header {
@@ -186,9 +188,9 @@ h2 {
 h3 {
   font-family: var(--ff-table);
   font-weight: var(--fw-bold700);
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
-
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -339,6 +341,11 @@ hr {
 }
 
 @media (max-width: 900px) {
+  body {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   #scroll-delay {
     margin-top: -10px;
   }
@@ -551,7 +558,7 @@ hr {
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
