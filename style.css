@@ -96,8 +96,11 @@ body {
   background-color: var(--clr-grey1);
   font-family: var(--ff-table);
   margin-top: -20px;
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
+  margin: auto;
+  max-width: 800px;
+  padding: 10px;
 }
 
 .header {
@@ -197,16 +200,12 @@ h3 {
 p {
   text-align: justify;
   font-size: 14px;
-  margin-left: 0px;
-  margin-right: 0px;
   margin-bottom: 10px;
 }
 
 .intro-container {
   margin-top: 120px;
   margin-bottom: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
   text-align: justify;
 }
 
@@ -235,43 +234,23 @@ input {
 .convert-btn {
   margin-right: auto;
   font-weight: var(--fw-bold700);
-  font-size: 30px;
-  width: 200px;
+  font-size: 20px;
+  width: 150px;
   height: 50px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: var(--clr-grey4);
   color: white;
   margin-bottom: 20px;
-
   text-transform: uppercase;
-
   cursor: pointer;
-}
-
-.convert-btn:hover {
-  background-color: var(--clr-grey3);
-}
-
-.reverb-table {
-  background-color: var(--clr-grey2);
-  font-family: var(--ff-table);
-
-  border: 1px solid black;
-  /* border-radius: 10px; */
-
-  /* margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 50px; */
-
-  padding: 5px 5px;
-  box-shadow: 0px 5px 10px var(--clr-grey4);
+  padding-top: 5px;
 }
 
 .bpm-reverb {
   font-weight: var(--fw-bold700);
-  font-size: 30px;
-  width: 200px;
+  font-size: 20px;
+  width: 150px;
   height: 50px;
   margin-left: auto;
   margin-right: 20px;
@@ -281,6 +260,18 @@ input {
   padding-top: 5px;
   padding-left: 15px;
   text-align: center;
+}
+
+.convert-btn:hover {
+  background-color: var(--clr-grey3);
+}
+
+.reverb-table {
+  background-color: var(--clr-grey2);
+  font-family: var(--ff-table);
+  border: 1px solid black;
+  padding: 5px 5px;
+  box-shadow: 0px 5px 10px var(--clr-grey4);
 }
 
 .dark {
@@ -321,7 +312,6 @@ tbody {
 
 hr {
   margin-bottom: 20px;
-  /* margin-top: 50px; */
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -335,17 +325,10 @@ hr {
 }
 
 .rd-containers {
-  margin-left: 50px;
-  margin-right: 50px;
   gap: 50px;
 }
 
 @media (max-width: 900px) {
-  body {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
   #scroll-delay {
     margin-top: -10px;
   }
@@ -385,7 +368,6 @@ hr {
   }
 
   .nav-item {
-    /* margin: 16px 0; */
     margin-left: auto;
     margin-right: 60px;
   }
@@ -399,46 +381,20 @@ hr {
     flex-direction: column;
   }
   .calc {
-    margin-left: 0px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
   }
-  .bpm-reverb {
-    margin: auto;
-  }
+
   .convert-btn {
-    margin: auto;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 
 /* MEDIA FOR REVERB AND DELAY TOOLS */
 
 @media (max-width: 600px) {
-  body {
-    margin-right: 10px;
-  }
-
-  .rd-containers {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .rd-containers p {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .intro-container {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .piano-container {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
   .header {
     padding-left: 10px;
   }
@@ -447,9 +403,10 @@ hr {
     margin-right: -30px;
   }
 
-  /* .bpm-reverb {
+  .bpm-reverb {
     padding-left: 0px;
-  } */
+    padding-left: 5px;
+  }
 }
 
 /* KEYBOARD */
@@ -505,15 +462,9 @@ hr {
 .scales-container {
   background-color: var(--clr-grey2);
   border: 1px solid black;
-  margin-left: 50px;
-  margin-right: 50px;
+
   padding: 20px;
   box-shadow: 0px 5px 10px var(--clr-grey4);
-}
-
-.scales-intro {
-  margin-left: 50px;
-  margin-right: 50px;
 }
 
 .scales-btns button {
@@ -560,12 +511,11 @@ hr {
 h4 {
   font-size: 16px;
   text-align: center;
+  margin: auto;
   display: flex;
   flex-direction: column;
   width: 400px;
 
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 20px;
 }
 
@@ -588,20 +538,12 @@ h4 {
 /* MEDIA FOR SCALES TOOL */
 
 @media (max-width: 1000px) {
-  /* .piano-keys {
-    margin-left: -20px;
-    margin-right: 20px;
-  } */
   .piano-keys {
     transform: scale(0.9);
   }
 }
 
 @media (max-width: 800px) {
-  .scales-container {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
   .piano-keys {
     transform: scale(0.8);
     margin-top: -10px;
@@ -614,28 +556,12 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
-    margin-right: -15px;
-    margin-left: -15px;
   }
-
-  /* .scales-btns {
-    width: 100%;
-  } */
 
   /* TREBA DOROBIT SCALES RESPONZIVITU */
 }
 
 @media (max-width: 600px) {
-  .scales-intro {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .scales-container {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
   .piano-keys {
     transform: scale(0.6);
     margin-top: -40px;
@@ -646,11 +572,6 @@ h4 {
 }
 
 @media (max-width: 400px) {
-  .scales-container {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
   .piano-keys {
     transform: scale(0.5);
     margin-top: -60px;
